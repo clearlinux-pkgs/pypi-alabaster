@@ -6,14 +6,13 @@
 #
 Name     : pypi-alabaster
 Version  : 0.7.12
-Release  : 3
+Release  : 4
 URL      : https://files.pythonhosted.org/packages/cc/b4/ed8dcb0d67d5cfb7f83c4d5463a7614cb1d078ad7ae890c9143edebbf072/alabaster-0.7.12.tar.gz
 Source0  : https://files.pythonhosted.org/packages/cc/b4/ed8dcb0d67d5cfb7f83c4d5463a7614cb1d078ad7ae890c9143edebbf072/alabaster-0.7.12.tar.gz
 Source1  : https://files.pythonhosted.org/packages/cc/b4/ed8dcb0d67d5cfb7f83c4d5463a7614cb1d078ad7ae890c9143edebbf072/alabaster-0.7.12.tar.gz.asc
 Summary  : A configurable sidebar-enabled Sphinx theme
 Group    : Development/Tools
 License  : BSD-3-Clause
-Requires: pypi-alabaster-filemap = %{version}-%{release}
 Requires: pypi-alabaster-license = %{version}-%{release}
 Requires: pypi-alabaster-python = %{version}-%{release}
 Requires: pypi-alabaster-python3 = %{version}-%{release}
@@ -23,14 +22,6 @@ BuildRequires : buildreq-distutils3
 ==================
         
         Alabaster is a visually (c)lean, responsive, configurable theme for the `Sphinx
-
-%package filemap
-Summary: filemap components for the pypi-alabaster package.
-Group: Default
-
-%description filemap
-filemap components for the pypi-alabaster package.
-
 
 %package license
 Summary: license components for the pypi-alabaster package.
@@ -52,7 +43,6 @@ python components for the pypi-alabaster package.
 %package python3
 Summary: python3 components for the pypi-alabaster package.
 Group: Default
-Requires: pypi-alabaster-filemap = %{version}-%{release}
 Requires: python3-core
 Provides: pypi(alabaster)
 
@@ -72,7 +62,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1652992601
+export SOURCE_DATE_EPOCH=1652994604
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -114,10 +104,6 @@ popd
 
 %files
 %defattr(-,root,root,-)
-
-%files filemap
-%defattr(-,root,root,-)
-/usr/share/clear/filemap/filemap-pypi-alabaster
 
 %files license
 %defattr(0644,root,root,0755)
