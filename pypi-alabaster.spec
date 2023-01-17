@@ -5,11 +5,11 @@
 # Source0 file verified with key 0x9C29BC560041E930 (jeff@bitprophet.org)
 #
 Name     : pypi-alabaster
-Version  : 0.7.12
-Release  : 15
-URL      : https://files.pythonhosted.org/packages/cc/b4/ed8dcb0d67d5cfb7f83c4d5463a7614cb1d078ad7ae890c9143edebbf072/alabaster-0.7.12.tar.gz
-Source0  : https://files.pythonhosted.org/packages/cc/b4/ed8dcb0d67d5cfb7f83c4d5463a7614cb1d078ad7ae890c9143edebbf072/alabaster-0.7.12.tar.gz
-Source1  : https://files.pythonhosted.org/packages/cc/b4/ed8dcb0d67d5cfb7f83c4d5463a7614cb1d078ad7ae890c9143edebbf072/alabaster-0.7.12.tar.gz.asc
+Version  : 0.7.13
+Release  : 16
+URL      : https://files.pythonhosted.org/packages/94/71/a8ee96d1fd95ca04a0d2e2d9c4081dac4c2d2b12f7ddb899c8cb9bfd1532/alabaster-0.7.13.tar.gz
+Source0  : https://files.pythonhosted.org/packages/94/71/a8ee96d1fd95ca04a0d2e2d9c4081dac4c2d2b12f7ddb899c8cb9bfd1532/alabaster-0.7.13.tar.gz
+Source1  : https://files.pythonhosted.org/packages/94/71/a8ee96d1fd95ca04a0d2e2d9c4081dac4c2d2b12f7ddb899c8cb9bfd1532/alabaster-0.7.13.tar.gz.asc
 Summary  : A configurable sidebar-enabled Sphinx theme
 Group    : Development/Tools
 License  : BSD-3-Clause
@@ -22,9 +22,19 @@ BuildRequires : buildreq-distutils3
 %define debug_package %{nil}
 
 %description
-==================
-        
-        Alabaster is a visually (c)lean, responsive, configurable theme for the `Sphinx
+|version| |python| |license| |ci|
+.. |version| image:: https://img.shields.io/pypi/v/alabaster
+:target: https://pypi.org/project/alabaster/
+:alt: PyPI - Package Version
+.. |python| image:: https://img.shields.io/pypi/pyversions/alabaster
+:target: https://pypi.org/project/alabaster/
+:alt: PyPI - Python Version
+.. |license| image:: https://img.shields.io/pypi/l/alabaster
+:target: https://github.com/bitprophet/alabaster/blob/main/LICENSE
+:alt: PyPI - License
+.. |ci| image:: https://img.shields.io/circleci/build/github/bitprophet/alabaster/main
+:target: https://app.circleci.com/pipelines/github/bitprophet/alabaster
+:alt: CircleCI
 
 %package license
 Summary: license components for the pypi-alabaster package.
@@ -54,10 +64,10 @@ python3 components for the pypi-alabaster package.
 
 
 %prep
-%setup -q -n alabaster-0.7.12
-cd %{_builddir}/alabaster-0.7.12
+%setup -q -n alabaster-0.7.13
+cd %{_builddir}/alabaster-0.7.13
 pushd ..
-cp -a alabaster-0.7.12 buildavx2
+cp -a alabaster-0.7.13 buildavx2
 popd
 
 %build
@@ -65,7 +75,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1672254080
+export SOURCE_DATE_EPOCH=1673916344
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -90,7 +100,7 @@ popd
 export MAKEFLAGS=%{?_smp_mflags}
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/pypi-alabaster
-cp %{_builddir}/alabaster-%{version}/LICENSE %{buildroot}/usr/share/package-licenses/pypi-alabaster/04da7d4f55379e4b1055b4b9ee2d14a2706a334c
+cp %{_builddir}/alabaster-%{version}/LICENSE %{buildroot}/usr/share/package-licenses/pypi-alabaster/ef0bbb4479d44765f2402160812f3f860befe8f8 || :
 python3 -tt setup.py build  install --root=%{buildroot}
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
@@ -110,7 +120,7 @@ popd
 
 %files license
 %defattr(0644,root,root,0755)
-/usr/share/package-licenses/pypi-alabaster/04da7d4f55379e4b1055b4b9ee2d14a2706a334c
+/usr/share/package-licenses/pypi-alabaster/ef0bbb4479d44765f2402160812f3f860befe8f8
 
 %files python
 %defattr(-,root,root,-)
