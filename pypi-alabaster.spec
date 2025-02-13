@@ -7,7 +7,7 @@
 #
 Name     : pypi-alabaster
 Version  : 1.0.0
-Release  : 24
+Release  : 25
 URL      : https://files.pythonhosted.org/packages/a6/f8/d9c74d0daf3f742840fd818d69cfae176fa332022fd44e3469487d5a9420/alabaster-1.0.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/a6/f8/d9c74d0daf3f742840fd818d69cfae176fa332022fd44e3469487d5a9420/alabaster-1.0.0.tar.gz
 Summary  : A light, configurable Sphinx theme
